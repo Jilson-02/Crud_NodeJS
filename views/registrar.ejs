@@ -1,0 +1,74 @@
+ <div class="card card-primary col-md-10 offset-md-1">
+    <div class="card-header col-md-12">
+      <legend>Detalles del Empleado</legend>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form method="POST" action="/guardar">
+      <div class="card-body">
+        <fieldset>
+          
+    
+          <div class="form-group">
+            <label for="nombre"><i class="fas fa-user"></i> Nombre del Empleado</label>
+            <input type="text" name="nombreEm" id="nombre" placeholder="Introduzca el nombre del empleado" class="form-control" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="fechaContratacion"><i class="far fa-calendar-alt"></i> Fecha de Contratación</label>
+            <input type="date" name="fecha_contratacion" id="fechaContratacion" placeholder="Introduzca la fecha en que fue contratado el empleado" class="form-control" required max="<%= new Date().toISOString().split('T')[0] %>" autocomplete="off">
+          </div>
+    
+          <div class="form-group">
+            <label for="salario"><i class="fas fa-money-bill"></i> Salario</label>
+            <input type="text" name="salario" id="salario" placeholder="Introduzca el salario" class="form-control" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="horasTrabajadas"><i class="far fa-clock"></i> Horas Trabajadas</label>
+            <input type="number" name="horas_trabajadas" id="horasTrabajadas" placeholder="Introduzca las horas trabajadas" class="form-control" required min="1">
+          </div>
+    
+          <div class="form-group">
+            <label for="departamento"><i class="fas fa-building"></i> Departamento</label>
+            <input type="text" name="departamento" id="departamento" placeholder="Introduzca el departamento donde se desenvuelve" class="form-control" required>
+          </div>
+        </fieldset>
+      </div>
+    
+      <div class="card-footer">
+        <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Guardar</button>
+      </div>
+    </form>
+    
+  </div>
+
+
+      
+<table class="table table-striped projects col-md-10 offset-md-1 mt-4">
+  <thead>
+    <tr>
+      <th style="width: 1%"> # </th>
+      <th style="width: 20%"> Nombre </th>
+      <th style="width: 20%"> Fecha de Contratación </th>
+      <th style="width: 20%"> Salario </th>
+      <th style="width: 20%"> Horas Trabajadas </th>
+      <th style="width: 20%"> Departamento </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% result.forEach((emple) => { %>
+    <tr>
+      <td><%= emple.id %></td>
+      <td><%= emple.nombreEm %></td>
+      <td>
+        <% const fecha_contratacion = new Date(emple.fecha_contratacion); %>
+        <%= fecha_contratacion.toLocaleDateString('es-ES', { day: 'numeric', month: 'numeric', year: 'numeric' }) %>
+      </td>
+      <td><%= emple.salario %></td>
+      <td><%= emple.horas_trabajadas %></td>
+      <td><%= emple.departamento %></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
