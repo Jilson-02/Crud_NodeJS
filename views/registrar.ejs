@@ -64,7 +64,7 @@
 </div>
 
       
-<table class="table table-striped projects col-md-10 offset-md-1 mt-4">
+<table class="table table-striped projects col-md-10 offset-md-1 mt-4" style="text-align: center; width: 95%;">
   <thead>
     <tr>
       <th style="width: 1%"> # </th>
@@ -73,6 +73,7 @@
       <th style="width: 20%"> Salario </th>
       <th style="width: 20%"> Horas Trabajadas </th>
       <th style="width: 20%"> Departamento </th>
+      <th style="width: 20%"> Pagar </th>
     </tr>
   </thead>
   <tbody>
@@ -87,6 +88,14 @@
       <td><%= emple.salario %></td>
       <td><%= emple.horas_trabajadas %></td>
       <td><%= emple.departamento %></td>
+      <td>
+        <form method="post" action="/pagado/<%= emple.id %>">
+          <button type="submit" class="btn btn-lg btn-success" style="font-size: 12px;">
+              <i class="fas fa-dollar-sign">Pagar</i> 
+          </button>
+      </form>
+      
+      </td>
     </tr>
     <% }) %>
   </tbody>

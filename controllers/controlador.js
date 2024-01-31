@@ -7,7 +7,7 @@ exports.save = (req, res) => {
     const salario = req.body.salario
     const horas_trabajadas = req.body.horas_trabajadas
     const departamento = req.body.departamento
-    const pagado = 0
+    const pagado = 0  
     if (!nombreEm || !fecha_contratacion || !salario || !horas_trabajadas || !departamento) {
         return res.status(400).send('Todos los campos son obligatorios.');
     }

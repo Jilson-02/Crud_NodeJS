@@ -1,5 +1,5 @@
 <% if (typeof mensaje !== 'undefined' && mensaje) { %>
-    <div style="background-color: #f8d7da; color: #721c24; padding: 15px; border: 2px solid #f5c6cb; border-radius: 5px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
+    <div style="background-color: #f8d7da; color: #721c24; padding: 15px; border: 2px solid red; border-radius: 5px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
         <div>
             <div style="display: flex; align-items: center;">
                 <div style="margin-right: 10px;">
@@ -16,9 +16,10 @@
         </div>
         <!-- Botón de Regresar -->
         <div>
-            <button onclick="goBack()" class="btn btn-lg btn-danger">
-                <i class="fas fa-arrow-left"></i> Regresar
+            <button onclick="goBack()" class="btn btn-lg btn-success" style="background-color: red; border-color: red;">
+                <i class="fas fa-times"></i> 
             </button>
+              
             <script>function goBack() {window.history.back();}</script>
         </div>
         <!-- Fin del Botón de Regresar -->
