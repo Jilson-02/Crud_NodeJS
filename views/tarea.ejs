@@ -1,0 +1,60 @@
+<!-- <div class="card card-primary col-md-10 offset-md-1">
+    <div class="card-header col-md-12">
+        <h3 class="card-title">Añadir tareas <i class="fas fa-tasks"></i></h3>
+    </div>
+    <form method="POST" action="/crearTareas">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1"><i class="fas fa-pencil-alt"></i> Nombre de tarea</label>
+                <input type="text" name="nombreTarea" class="form-control" id="exampleInputEmail1" required>
+            </div>
+  
+            <div class="form-group">
+                <label for="exampleInputEmail3"><i class="far fa-clock"></i> Horas de tarea</label>
+                <input type="number" name="tiempoInvertido" class="form-control" id="exampleInputEmail3" title="Ingrese un número decimal válido" min="0" required>
+            </div>
+  
+            <label for="inputStatus"><i class="fas fa-user"></i> Empleado</label>
+            <select name="empleado_id" id="inputStatus" class="form-control custom-select" required>
+                <%result.forEach((empleados)=>{%>
+                <option value="<%=empleados.id%>"><%=empleados.nombreEm%></option>
+                <%})%>
+            </select>
+  
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Registrar</button>
+            </div>
+        </div>
+    </form>
+</div> -->
+
+<div class="card card-primary col-md-10 offset-md-1">
+    <div class="card-header col-md-12">
+        <h3 class="card-title">Añadir tareas <i class="fas fa-tasks"></i></h3>
+    </div>
+    <!-- form start -->
+    <form method="POST" action="/crearTareas">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1"><i class="fas fa-pencil-alt"></i> Nombre de tarea</label>
+                <input type="text" name="nombreTarea" class="form-control" id="exampleInputEmail1" required>
+            </div>
+  
+            <div class="form-group">
+                <label for="exampleInputEmail3"><i class="far fa-clock"></i> Horas de tarea</label>
+                <input type="number" name="tiempoInvertido" class="form-control" id="exampleInputEmail3" title="Ingrese un número decimal válido" min="0" required>
+            </div>
+  
+            <label for="inputStatus"><i class="fas fa-user"></i> Empleado</label>
+            <select name="empleado_id" id="inputStatus" class="form-control custom-select" required>
+                <% result.forEach((empleados) => { %>
+                <option value="<%= empleados.id %>"><%= empleados.nombreEm %></option>
+                <% }) %>
+            </select>
+  
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Registrar</button>
+            </div>
+        </div>
+    </form>
+</div>

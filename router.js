@@ -27,7 +27,19 @@ router.get('/registrar', (req, res) => {
         });
     }
 });
-const crud = require('./controllers/controlador')
-router.post('/guardar', crud.save)
+const controlador = require('./controllers/controlador')
+router.post('/guardar', controlador.save)
+
+//rutas Tarea
+router.get('/tareas',(req,res)=>{
+    conexion.query('SELECT * FROM empleados',(err,result)=>{
+        if(err)
+        throw err
+    else
+    res.render('tarea',{result:result})
+    })
+})
+router.post('/crearTareas',controlador.tareas)
+
 
 module.exports = router
